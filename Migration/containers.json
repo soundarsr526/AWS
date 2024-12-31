@@ -1,0 +1,11 @@
+[
+  {
+    "Description": "Windows 7 ova",
+    "Format": "ova",
+    "UserBucket": {
+        "S3Bucket": "migration-aws-deva",
+        "S3Key": "Win7-Victim.ova"
+    }
+}]
+
+

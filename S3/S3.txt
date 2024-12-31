@@ -1,0 +1,74 @@
+What is AWS S3?
+Amazon Simple Storage Service (Amazon S3) is storage on the Internet. 
+Amazon S3 to store and retrieve any amount of data at any time, from anywhere on the web.
+
+March 2006: Amazon launched Simple Storage Service (S3)
+
+S3 is designed for:
+
+Remote data storage.
+Low cost, pay-as-you go.
+No up-front costs.
+High-availability.
+High bandwidth.	
+
+Features:
+
+- 99.999999999% Durability.
+- 99.99% Availability.
+
+Functions & Concepts of S3:
+
+Buckets:
+- A basic storage unit.
+- Collection of Objects.
+- It is a single level container, can contain multiple folders, or objects can be placed directly.
+- Upload and download are easier.
+- Name of the bucket should be globally unique.
+- Allows maximum 100 buckets per user.
+- No size restriction for Bucket.
+- Data kept secured from unauthorized access through authentication mechanism.
+
+Objects:
+- Equivalent to files.
+- Allows max of 5GB for a single object.
+
+
+How to Access AWS S3 storage?
+Accessible using simple HTTP URLs
+https://s3.amazonaws.com/bucket/folder/key
+
+
+https://s3.amazonaws.com/KARTHIK/error.log
+
+
+
+
+http://bucket/key
+where bucket is a DNS CNAME record pointing to s3.amazonaws.com)
+
+
+
+OBJECT LEVEL PROPERTIES:
+1. DETAILS: 
+STANDARD: 99.99999999%
+STAND.INFREQUENT: LESSER THAN STANDARD.
+Reduced Redundancy: 99.99% , LESSER THAN S.IA.
+
+AES 256 - ADVANCED ENCRYPTION STANDARD.
+
+2. PERMISSION:
+- ME, ALL, RECOG.USER.
+- OPEN, VIEW, EDIT.
+
+3. META DATA: DATA'S DATA.
+FORMAT OF THE FILE. EG: HTML / JPEG.
+
+4. TAGS: INPROGRESS.
+
+ 
+
+
+
+
+
