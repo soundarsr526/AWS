@@ -1,0 +1,57 @@
+
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.16"
+    }
+  }
+
+  required_version = ">= 1.2.0"
+}
+
+# Providers Configuration
+provider "aws" {
+  region = "us-west-2" # Replace with your preferred AWS region
+  access_key = "AKIAYHJANNQ3EXQXFH4V" # give your IAM access_key insteed
+  secret_key = "XPmytlI6g81HxomI4l1FLL//YtrnLejcSlpn8O/k" # give your IAM secret_key insteed
+}
+
+# Create a Security Group
+resource "aws_security_group" "example_sg" { # "example_sg" give your name insteed
+  name        = "example_security_group" # "example" give your name insteed
+  description = "Example security group" # "Example security group" give your description insteed
+
+  ingress { #inbound rule
+    from_port   = 80 # port for HTTP
+    to_port     = 80 # port for HTTP
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 22 # port for SSH
+    to_port     = 22 # port for SSH
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+
+  egress { #outbound rule
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+resource "aws_instance" "example_server" {
+  ami           = "ami-05d38da78ce859165"  # Replace with your AMI ID in us-west-2 (ubuntu linux)
+  instance_type = "t2.micro"
+  security_groups = [aws_security_group.example_sg.name]  # Make sure this points to your security group
+  key_name = "my_key" # replace your keyname
+
+  tags = {
+    Name = "TERRAFORM" # replace your tag
+  }
+}
